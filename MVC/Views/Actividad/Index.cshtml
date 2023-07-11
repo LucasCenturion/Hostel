@@ -1,0 +1,48 @@
+﻿@using Dominio
+<div class="container-md4">
+    <div class="text-white" style="border-radius: 1rem; background-color: rgba(0, 0, 0, 0.8);">
+        <table class= "table text-white">
+            <thead>
+                <tr>
+                    <th class="d-none d-sm-table-cell">Identificador</th>
+                    <th>Nombre</th>
+                    <th class="d-none d-sm-table-cell">Edad Mínima</th>
+                    <th class="d-none d-sm-table-cell">Capacidad Máxima</th>
+                    <th>Costo</th>
+                    <th class="d-none d-sm-table-cell">Descripción</th>
+                    <th>Fecha</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (Actividad unA in ViewBag.ListaActividades)
+                {
+                    <tr>
+                        <td class="d-none d-sm-table-cell">@unA.Identificador</td>
+                        <td>@unA.Nombre</td>
+                        <td class="d-none d-sm-table-cell">@unA.EdadMinima</td>
+                        <td class="d-none d-sm-table-cell">@unA.CantidadMaxima</td>
+                        <td>@unA.Costo</td>
+                        <td class="d-none d-sm-table-cell">@unA.Descripcion</td>
+                        <td>@unA.Fecha.ToShortDateString()</td>
+                        <td>
+                            @if (Context.Session.GetString("Usuario") == null)
+                            {
+                                <a href="/Login/login" class="text-white-50 fw-bold">
+                                    <input type="button" value="Agendar" class="btn btn-outline-secondary">
+                                </a>
+                            }
+                            @if (Context.Session.GetString("Usuario") != null && Context.Session.GetString("Rol") == "Dominio.Huesped")
+                            {
+                                <a href="/Agenda/Agenda/@unA.Identificador" class="text-white-50 fw-bold">
+                                    <input type="button" value="Agendar" class="btn btn-outline-secondary">
+                                </a>
+                            }
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
+

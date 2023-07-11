@@ -1,0 +1,46 @@
+﻿@using Dominio;
+<div>
+    @if (TempData["Error"] != null)
+    {
+        <div class="alert alert-danger">@TempData["Error"]</div>
+    }
+    else
+    {
+        <div class="container-md">
+            <div class="row justify-content-center">
+                <div class="text-white" style="border-radius: 1rem; background-color: rgba(0, 0, 0, 0.8);">
+                    <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3">
+
+                        @foreach (Agenda unAgenda in ViewBag.DevolverAgendaXDoc)
+                        {
+                            if (unAgenda.Activdad is ActividadPropia)
+                            {
+                                ActividadPropia unaActividadP = unAgenda.Activdad as ActividadPropia;
+
+                                <div class="col mb-4">
+                                    <table class="table table-dark table-striped">
+                                        <tr><td>@Html.Raw(unAgenda.toHtmlAgenda())</td></tr>
+                                    </table>
+                                </div>
+                            }
+
+                            if (unAgenda.Activdad is ActividadTercerizada)
+                            {
+                                ActividadTercerizada unaActividadT = unAgenda.Activdad as ActividadTercerizada;
+
+                                <div class="col mb-4">
+                                    <table class="table table-dark table-striped">
+                                        <tr><td>@Html.Raw(unAgenda.toHtmlAgenda())</td></tr>
+                                    </table>
+                                </div>
+                            }
+                        }
+                    </div>
+                </div>
+            </div>
+        </div>
+    }
+
+    
+   
+</div>

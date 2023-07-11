@@ -1,0 +1,52 @@
+﻿@using Dominio
+
+<div>
+    @if(ViewBag.Mensaje != null)
+    {
+        <div class="alert-danger">@ViewBag.Mensaje</div>
+    }
+
+    <form action="" method="post" id="formulario">
+        <fieldset >
+            <label for="tipoDocumento">Tipo de Documento</label>
+            <select class="form-select" id="tipoDocumento" name="TipoDeDocumento" required>
+                <option value="Opcion">Seleccione</option>
+                <option value="CI">CI</option>
+                <option value="Pasaporte">Pasaporte</option>
+                <option value="Otros">Otros</option>
+            </select>
+
+            <label  for="documento">Documento</label>
+            <input type="text" class="form-control" id="documento" name="NroDocumento" required>
+
+            <label for="nombre">Nombre</label>
+            <input class="form-control" type="text" id="nombre" name="Nombre" required>
+
+            <label for="apellido">Apellido</label>
+            <input class="form-control" type="text" id="apellido" name="Apellido" required>
+
+            <label for="fechaNacimiento">Fecha de Nacimiento</label>
+            <input class="form-control" type="date" id="fechaNacimiento" name="FechaNacimiento" required>
+
+            <label for="email">Email</label>
+            <input class="form-control" type="email" id="email" name="email" required>
+
+            <label for="password">Password</label>
+            <input class="form-control" type="password" id="password" name="Password" required>
+
+            <label for="habitacion">Habitación</label>
+            <input class="form-control" type="text" id="habitacion" name="Habitacion" required>
+
+            <label for="fidelizacion">Fidelizacion</label>
+            <input class="form-control" type="text" id="fidelizacion" name="TipoFidelizacion" value="NIVEL1" readonly required>
+
+            <button class="btn btn-outline-secondary" type="submit">Enviar</button>
+        </fieldset>
+    </form>
+</div>
+
+
+
+
+
+

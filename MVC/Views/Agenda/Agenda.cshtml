@@ -1,0 +1,59 @@
+﻿@using Dominio
+
+<div class="row d-flex justify-content-center">
+    <div class=" text-white" style="border-radius: 1rem; background-color: rgba(0, 0, 0, 0.8);">
+        <div class="card-body p-5 text-left">
+            <h3>Datos Actividad</h3>
+            <table>
+                <tr>
+                    <th>Identificador   </th>
+                    <td>
+                        @ViewBag.Actividad.Identificador
+                    </td>
+                </tr>
+                <tr>
+                    <th>Nombre   </th>
+                    <td>
+                        @ViewBag.Actividad.Nombre
+                    </td>
+                </tr>
+                <tr>
+                    <th>Edad Minima   </th>
+                    <td>
+                        @ViewBag.Actividad.EdadMinima
+                    </td>
+                </tr>
+                <tr>
+                    <th>Cantidad Maxima   </th>
+                    <td>
+                        @ViewBag.Actividad.CantidadMaxima
+                    </td>
+                </tr>
+                <tr>
+                    <th>Fecha   </th>
+                    <td>
+                        @ViewBag.Actividad.Fecha
+                    </td>
+                </tr>
+                <tr>
+                    <th>Costo   </th>
+                    <td>
+                        @ViewBag.Actividad.Costo
+                    </td>
+                </tr>
+                <tr>
+                    <th>Descripcion   </th>
+                    <td>
+                        @ViewBag.Actividad.Descripcion
+                    </td>
+                </tr>
+            </table>
+            <br>
+            <div>
+                <a class="btn btn-primary" href="/Agenda/RegistroAgenda/@ViewBag.Actividad.Identificador">Agendar</a>
+            </div>
+
+        </div>
+    </div>
+
+

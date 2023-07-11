@@ -1,0 +1,71 @@
+﻿@using Dominio;
+
+<div class="row d-flex justify-content-center">
+                <div class="row d-flex justify-content-center">
+                    <div class=" text-white" style="border-radius: 1rem; background-color: rgba(0, 0, 0, 0.8);">
+                        <div class="card-body p-5 text-left">
+                            <h3>Mis Datos</h3>
+                        @foreach (Usuario unUsuario in ViewBag.listaUsuarios)
+                        {
+                            if (unUsuario is Operador)
+                            {
+                                Operador unOp = unUsuario as Operador;
+                                if (Context.Session.GetString("Usuario") == unUsuario.Email && Context.Session.GetString("Rol") == "Dominio.Operador")
+                                {
+                                    <table>
+                                        <tr>
+                                            <td>Nombre: @unOp.Nombre</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Apellido: @unOp.Apellido</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Email: @unOp.Email</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Fecha Contratación: @unOp.FechaInicioEmpresa.ToShortDateString()</td>
+                                        </tr>
+
+                                    </table>
+                                }
+                            }
+                                else if (unUsuario is Huesped)
+                                {
+                                    Huesped unHp = unUsuario as Huesped;
+                                    if (Context.Session.GetString("Usuario") == unUsuario.Email && Context.Session.GetString("Rol") == "Dominio.Huesped")
+                                    {
+                                        <table>
+                                            <tr>
+                                                <td>Nombre: @unHp.Nombre</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Apellido: @unHp.Apellido</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Tipo de Documento: @unHp.TipoDeDocumento</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Numero de Documento: @unHp.NroDocumento</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Fecha de Nacimiento: @unHp.FechaNacimiento.ToShortDateString()</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Habitación: @unHp.Habitacion</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Fidelización: @unHp.TipoFidelizacion</td>
+                                            </tr>
+
+                                        </table>
+                                    }
+                                }
+                        }
+                    </div>
+                    </div>
+                </div>
+        </div>
+
+
+
+

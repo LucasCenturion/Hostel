@@ -1,0 +1,34 @@
+﻿@using Dominio;
+
+<div class="container-md4">
+    <table class="table table-dark table-striped">
+        <tr>
+            <th>Nombre</th>
+            <th>Apellido</th>
+            <th>E-Mail</th>
+            <th>Tipo de Documento</th>
+            <th>Numero de Documento</th>
+            <th>Habitacion</th>
+            <th>Fecha de Nacimiento</th>
+            <th>Tipo de Fidelizacion</th>
+            <th></th>
+        </tr>
+        @foreach (Usuario UnU in ViewBag.ListaUsuarios)
+        {
+            <tr>
+                <td>@UnU.Nombre</td>
+                <td>@UnU.Apellido</td>
+                <td>@UnU.Email</td>
+                @if (UnU is Huesped)
+                {
+                    Huesped UnH = (Huesped) UnU;
+                    <td>@UnH.TipoDeDocumento</td>
+                    <td>@UnH.NroDocumento</td>
+                    <td>@UnH.Habitacion</td>
+                    <td>@UnH.FechaNacimiento</td>
+                    <td>@UnH.TipoFidelizacion</td>
+                }
+            </tr>
+        }
+    </table>
+</div>

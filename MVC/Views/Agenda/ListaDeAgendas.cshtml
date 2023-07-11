@@ -1,0 +1,48 @@
+﻿@using Dominio;
+<div class="container-md">
+    <div class="row justify-content-center align-items-center vh-50">
+        <div class="text-white" style="border-radius: 1rem; background-color: rgba(0, 0, 0, 0.8);">
+            
+                @foreach (Agenda unAgenda in ViewBag.Agenda)
+                {
+                DateTime fechaHoy = DateTime.Now.Date;
+                    if (unAgenda.Activdad.Fecha.Date == fechaHoy)
+                                {
+                                       <div class="col mb-4">
+                                            <table class="table table-dark table-striped">
+                                                <tr>
+                                                    <td>@Html.Raw(unAgenda.toHtmlAgenda())</td>
+                                                </tr>
+                                            </table>
+                        <form class="text-center" method="get" action="/Agenda/DevolverAgendaDelDia">
+                            <div class="justify-content-center text-center">
+                                <div class="input-group-append">
+                                    <input type="date" class="date-input" name="fecha" placeholder="Ingrese la fecha a buscar">
+                                    <button type="submit" class="btn btn-primary">Buscar</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    break;
+                }
+                    else {
+                            <div class="col mb-5">
+                                <h3 class="text-center">No hay Agendas en el día de hoy!</h3>
+                                <form class="text-center" method="get" action="/Agenda/DevolverAgendaDelDia">
+                                    <div class="justify-content-center text-center">
+                                            <div class="input-group-append">
+                                                <input type="date" class="date-input" name="fecha" placeholder="Ingrese la fecha a buscar">
+                                                <button type="submit" class="btn btn-primary">Buscar</button>
+                                            </div>
+                                    </div>
+
+                                </form>
+                    </div>
+                }
+                break;
+                break;
+                }
+                
+        </div>
+    </div>
+</div>

@@ -1,0 +1,156 @@
+html {
+  font-size: 14px;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
+  box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+a {
+    text-decoration: none;
+    color: black;
+}
+
+
+body {
+  margin-bottom: 60px;
+  background-image: url(../img/hostel.jpg);
+}
+
+footer{
+    background-color: bs-dark;
+}
+
+table {
+    margin-top: 50px;
+}
+
+.form-body {
+    width: 500px;
+    justify-content: center;
+    border-radius: 1rem;
+}
+
+.formulario {
+    width: 500px;
+    height: 100%;
+    border-radius: 1rem
+}
+
+fieldset {
+    display: grid;
+    padding: 5px;
+    justify-content: center;
+    padding: 10px;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border-radius: 1rem;
+}
+
+
+main {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+form label{
+    margin: 2px
+}
+form input {
+    margin: 2px
+}
+form select {
+    margin: 2px
+}
+form button {
+    margin: 2px
+}
+form label:nth-of-type(1) {
+    grid-column: 1/2;
+    grid-row: 1;
+}
+form label:nth-of-type(2) {
+    grid-column: 1/2;
+    grid-row: 2;
+}
+form label:nth-of-type(3) {
+    grid-column: 1/2;
+    grid-row: 3/4;
+}
+form label:nth-of-type(4) {
+    grid-column: 1/2;
+    grid-row: 4;
+}
+form label:nth-of-type(5) {
+    grid-column: 1/2;
+    grid-row: 5;
+}
+form label:nth-of-type(6) {
+    grid-column: 1/2;
+    grid-row: 6;
+}
+form label:nth-of-type(7) {
+    grid-column: 1/2;
+    grid-row: 7;
+}
+form label:nth-of-type(8) {
+    grid-column: 1/2;
+    grid-row: 8;
+}
+form label:nth-of-type(9) {
+    grid-column: 1/2;
+    grid-row: 9;
+}
+form select{
+    grid-column: 2;
+    grid-row: 1;
+}
+form input:nth-of-type(1) {
+    grid-column: 2;
+    grid-row: 2;
+}
+form input:nth-of-type(2) {
+    grid-column: 2;
+    grid-row: 3;
+}
+form input:nth-of-type(3) {
+    grid-column: 2;
+    grid-row: 4;
+}
+form input:nth-of-type(4) {
+    grid-column: 2;
+    grid-row: 5;
+}
+form input:nth-of-type(5) {
+    grid-column: 2;
+    grid-row: 6;
+}
+form input:nth-of-type(6) {
+    grid-column: 2;
+    grid-row: 7;
+}
+form input:nth-of-type(7) {
+    grid-column: 2;
+    grid-row: 8;
+}
+form input:nth-of-type(8) {
+    grid-column: 2;
+    grid-row: 9;
+}
+form button {
+    grid-column: 1/3;
+    grid-row: 10;
+}
+.date-input {
+    width: 150px; /* Ajusta el valor según tus necesidades */
+}

@@ -1,0 +1,30 @@
+﻿@using Dominio;
+<div>
+
+    @if (TempData["Error"] != null)
+    {
+        <div class="alert alert-danger">@TempData["Error"]</div>
+    }
+    else
+    {
+        <div class="container-md">
+            <div class="row justify-content-center align-items-center vh-50">
+                <div class="text-white" style="border-radius: 1rem; background-color: rgba(0, 0, 0, 0.8);">
+
+                    @foreach (Agenda unAgenda in ViewBag.DevolverAgendaDelDia)
+                    {
+                        <div class="col mb-4">
+                            <table class="table table-dark table-striped">
+                                <tr>
+                                    <td>@Html.Raw(unAgenda.toHtmlAgenda())</td>
+                                </tr>
+                            </table>
+                        </div>
+                    }
+                </div>
+            </div>
+        </div>
+    }
+
+
+</div>

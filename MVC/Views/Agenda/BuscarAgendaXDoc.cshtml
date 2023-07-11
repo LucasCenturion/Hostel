@@ -1,0 +1,28 @@
+﻿@using Dominio
+<div class="container-md-4 d-flex justify-content-center align-items-center" style="height: 80vh;">
+    <div class="text-white" style="border-radius: 1rem; background-color: rgba(0, 0, 0, 0.8); padding: 1rem;">
+        @if (ViewBag.Mensaje != null)
+        {
+            <div class="alert-danger">@ViewBag.Mensaje</div>
+        }
+        <form asp-controller="Agenda" asp-action="DevolverAgendaXDoc" method="post" id="">
+            <div class="mb-3">
+                <label for="tipoDocumento" class="form-label">Tipo de Documento</label>
+                <select class="form-select" id="tipoDocumento" name="TipoDeDocumento" required>
+                    <option value="Opcion">Seleccione</option>
+                    @foreach (Huesped.tipoDocumento tipoDocumento in Enum.GetValues(typeof(Huesped.tipoDocumento)))
+                    {
+                        <option value="@tipoDocumento">@tipoDocumento</option>
+                    }
+                </select>
+            </div>
+            <div class="mb-3">
+                <label for="nro" class="form-label">Nro. de Documento</label>
+                <input type="text" class="form-control" id="nro" name="NroDocumento">
+            </div>
+            <div class="mb-3 text-center">
+                <input type="submit" value="Mostrar Resultados" class="btn btn-outline-secondary">
+            </div>
+        </form>
+    </div>
+</div>

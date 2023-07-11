@@ -1,0 +1,47 @@
+﻿@using Dominio;
+
+<div class="row d-flex justify-content-center">
+    <div class="text-white" style="border-radius: 1rem; background-color: rgba(0, 0, 0, 0.8);">
+        <div class="card-body p-5 text-left">
+            @{
+                int identificador = 0;
+            }
+            <h3>Datos Actividad</h3>
+            <hr>
+            <table>
+                <tr>
+                    <td>@Html.Raw(ViewBag.Usuario.toHtml())</td>
+                </tr>
+            </table>
+            <hr>
+            <table>
+                <tr>
+                    <td>
+                        @if (ViewBag.Actividad is ActividadPropia)
+                        {
+                            ActividadPropia unaP = ViewBag.Actividad as ActividadPropia;
+                            @Html.Raw(unaP.PropiaHTML())
+                             identificador = unaP.Identificador;
+                        }
+                        @if (ViewBag.Actividad is ActividadTercerizada)
+                        {
+                            ActividadTercerizada unaT = ViewBag.Actividad as ActividadTercerizada;
+                            @Html.Raw(unaT.TercerizadaHtml())
+                             identificador = unaT.Identificador;
+                        }
+                    </td>
+                </tr>
+            </table>
+            <hr>
+            <form method="POST" action="/Agenda/RegistroAgendaNueva">
+                <input type="hidden" name="identificador" value="@identificador" />
+                <button type="submit" class="btn btn-primary">Confirmar Reserva</button>
+            </form>
+
+        </div>
+    </div>
+</div>
+            
+            
+
+        
